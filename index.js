@@ -1,12 +1,16 @@
+require('dotenv').config();
 const express = require('express');
+const cors= require('cors');
+const {dbConnect}= require("./config/mongo")
 const app= express()
-const port=3000
+const port= process.env.PORT || 3000
+
+app.use(cors());
+app.use(express.json());
+
 // req trae del usuario
 // res reponde al usuario
-app.get("/", (req, res )=> {
-  res.send("Hola Mundo  Soy Ruth");
-})
-
+dbConnect()
 app.listen(port, ()=>{
   console.log("mi puerto es: "+port);
 })

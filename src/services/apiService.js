@@ -1,15 +1,15 @@
 const getAllInformation () =>{
-  return
+  return ;
 };
 const getOneInformation () =>{
-  return
+  return;
 };
 const createInformation () =>{
-  return
+  return;
 };
 const updateInformation () =>{
-  return
+  return;
 };
 const deleteInformation () =>{
-  return
+  return;
 };
