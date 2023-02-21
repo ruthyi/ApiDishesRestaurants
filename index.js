@@ -8,6 +8,7 @@ const port= process.env.PORT || 3000
 app.use(cors());
 app.use(express.json());
 
+app.use('Api/v1', require("./src/v1/routes/index"))
 // req trae del usuario
 // res reponde al usuario
 dbConnect()

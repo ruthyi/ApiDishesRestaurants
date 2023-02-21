@@ -1,15 +1,16 @@
-const getAllInformation () =>{
-  return ;
+const getAllInformation =(req,res) =>{
+  console.log("llego");
+  res.send({lista: [1,2,3]})
 };
-const getOneInformation () =>{
-  return;
+const getOneInformation =(req,res) =>{
+  return false;
 };
-const createInformation () =>{
-  return;
+const createInformation =(req,res) =>{
+  return false;
 };
-const updateInformation () =>{
-  return;
+const updateInformation =(req,res) =>{
+  return false;
 };
-const deleteInformation () =>{
-  return;
+const deleteInformation =(req,res) =>{
+  return false;
 };

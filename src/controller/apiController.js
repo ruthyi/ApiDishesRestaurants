@@ -21,9 +21,12 @@ const deleteInformation = (req , res )=>{
 };
 
 
-module.exports= getAllInformation;
-module.exports=   getOneInformation;
-module.exports=   createInformation;
-module.exports=   updateInformation;
-module.exports=   deleteInformation;
+module.exports={
+  getAllInformation,
+  getOneInformation,
+  createInformation,
+  updateInformation,
+  deleteInformation
+} ;
+
 
