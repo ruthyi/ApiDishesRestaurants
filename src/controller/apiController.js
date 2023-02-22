@@ -10,8 +10,14 @@ const getAllInformation =async  (req,res) =>{
 }
 };
 const getOneInformation =async (req,res) =>{
+  const input =req.params.nombre;
   try {
-    const one = await useModel.find({nombre:req.params.nombre})
+    const one = await useModel.find({
+      nombre:{
+        $eq:input
+      }
+    })
+    console.log(one);
     res.send({ data :one })
 } catch (e) {
     res.status(500)
