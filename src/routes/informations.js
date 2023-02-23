@@ -15,7 +15,7 @@ router.get("/:nombre",getOneInformation)
 // // todo: localhost/Api/v1/informations/
  router.post("/",createInformation)
 // // todo: localhost/Api/v1/informations/:name
-router.put("/:nombre", updateInformation)
+router.put("/:id", updateInformation)
 // // todo: localhost/Api/v1/informations/
 router.delete("/",deleteInformation)
 
