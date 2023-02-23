@@ -37,7 +37,7 @@ donde se puede traer los datos del restaurante de acuerdo al id generado automan
 
 
 ### Autores ✒️ 
-* Ruth Lozano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
+* Ruth Lizcano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
  
  
  
