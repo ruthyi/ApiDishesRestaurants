@@ -24,6 +24,17 @@ const getOneInformationById =async (req,res) =>{
     res.send({ error: 'Algo ocurrio' })
 }
 };
+// fillter information by Nmae
+const getOneInformationByName =async (req,res) =>{
+  const input =req.params.nombre;
+  try {
+    const one = await useModel.find({nombre:req.params.nombre});
+    res.status(200).json(one);
+} catch (e) {
+    res.status(500)
+    res.send({ error: 'Algo ocurrio' })
+}
+};
 // create new registration in database
 const createInformation = async (req,res) =>{
   try {
@@ -60,4 +71,4 @@ const deleteInformation = async(req,res) =>{
 
 
 
-module.exports = { getAllInformation, getOneInformationById, createInformation, updateInformation, deleteInformation }
+module.exports = { getAllInformation, getOneInformationById, createInformation, updateInformation, deleteInformation, getOneInformationByName }
