@@ -13,16 +13,11 @@ const getAllInformation =async  (req,res) =>{
 };
 
 
-// fillter information by ...
-const getOneInformation =async (req,res) =>{
+// fillter information by Id
+const getOneInformationById =async (req,res) =>{
   const input =req.params.nombre;
   try {
-    const one = await useModel.find({
-      nombre:{
-        $eq:input
-      }
-    })
-    console.log(one);
+    const one = await useModel.findById(req.params.id);
     res.status(200).json(one);
 } catch (e) {
     res.status(500)
@@ -65,4 +60,4 @@ const deleteInformation = async(req,res) =>{
 
 
 
-module.exports = { getAllInformation, getOneInformation, createInformation, updateInformation, deleteInformation }
+module.exports = { getAllInformation, getOneInformationById, createInformation, updateInformation, deleteInformation }

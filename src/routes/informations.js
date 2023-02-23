@@ -1,7 +1,7 @@
  const express = require("express");
  const router= express.Router();
 const {getAllInformation,
-  getOneInformation,
+  getOneInformationById,
  createInformation,
    updateInformation,
    deleteInformation} = require ("../controller/apiController")
@@ -11,7 +11,7 @@ const {getAllInformation,
 
  router.get("/",getAllInformation );
 // // todo: localhost/Api/v1/informations/:name
-router.get("/:nombre",getOneInformation)
+router.get("/:id",getOneInformationById)
 // // todo: localhost/Api/v1/informations/
  router.post("/",createInformation)
 // // todo: localhost/Api/v1/informations/:name
