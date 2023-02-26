@@ -24,6 +24,11 @@ donde se puede traer los datos del restaurante de acuerdo al id generado automan
 * Mongo db
 * Express
 * Cors
+* eslint
+* bcryptjs
+* dotenv
+* jsonwebtoken
+* mongoose
 * Implementa el Modelo Vista controlador (MVC)
 
 ### Funcionalidades 📦 
@@ -34,6 +39,10 @@ donde se puede traer los datos del restaurante de acuerdo al id generado automan
 4. Elimina restuarantes
 5. Traer el restaurante por el id.
 6. Traer el restaurante por nombre.
+7. El admin puede :
+   - Crear, listar, buscar, eliminar y modificar un usuario
+8. Se puede Logiar.
+9. Registrarse.
 
 
 ### Autores ✒️ 
