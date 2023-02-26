@@ -8,17 +8,17 @@ const {
   createItem,
   deleteItem,
   updateItem } = require('../controller/userController')
- // checkAuth, checkRoleAuth(['admin']),
-router.get('/',  getItems)
 
-router.get('/:id', getItem)
+router.get('/', checkAuth, checkRoleAuth(['admin']), getItems)
+
+router.get('/:id',checkAuth, checkRoleAuth(['admin']), getItem)
 
 //TODO: Donde recibimos data
-router.post('/', createItem)
+router.post('/',checkAuth, checkRoleAuth(['admin']), createItem)
 
-router.put('/:id', updateItem)
+router.put('/:id',checkAuth, checkRoleAuth(['admin']), updateItem)
 
-router.delete('/', deleteItem)
+router.delete('/',checkAuth, checkRoleAuth(['admin']), deleteItem)
 
 
 module.exports = router
