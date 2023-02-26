@@ -15,7 +15,6 @@ const getAllInformation =async  (req,res) =>{
 
 // fillter information by Id
 const getOneInformationById =async (req,res) =>{
-  const input =req.params.nombre;
   try {
     const one = await useModel.findById(req.params.id);
     res.status(200).json(one);
@@ -26,7 +25,6 @@ const getOneInformationById =async (req,res) =>{
 };
 // fillter information by Nmae
 const getOneInformationByName =async (req,res) =>{
-  const input =req.params.nombre;
   try {
     const one = await useModel.find({nombre:req.params.nombre});
     res.status(200).json(one);
