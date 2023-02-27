@@ -75,6 +75,7 @@ router.get('/:id',checkAuth, checkRoleAuth(['admin']), getItem)
  *       - bearerAuth: []
  */
 router.post('/',checkAuth, checkRoleAuth(['admin']), createItem)
+
 /**
  * @swagger
  * /Api/v1/users/{_id}:
@@ -107,6 +108,7 @@ router.post('/',checkAuth, checkRoleAuth(['admin']), createItem)
 router.put('/:id',checkAuth, checkRoleAuth(['admin']), updateItem)
 
 //TODO: Registrar un usuario
+
 /**
  * @swagger
  * /Api/v1/users:

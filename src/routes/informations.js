@@ -15,29 +15,17 @@ const {getAllInformation,
 
  // todo: localhost/Api/v1/informations/
  /**
+ /**
  * @swagger
  * /Api/v1/informations/:
  *   get:
- *     summary: Resumen opcional para la operación
- *     description: Descripción opcional para la operación
+ *     summary: Listado de usuarios Registrados
+ *     description: Este endpoint  lo podra utilizar cualquier usuario
  *     tags:
  *       - Restaurant
- *     parameters:
- *       - name: parametro1
- *         in: query
- *         description: Descripción opcional del parámetro
- *         required: false
- *         schema:
- *           type: string
- *       - name: parametro2
- *         in: query
- *         description: Descripción opcional del segundo parámetro
- *         required: false
- *         schema:
- *           type: integer
  *     responses:
  *       '200':
- *         description: Respuesta exitosa
+ *         description: Acción  exitosa
  *       '400':
  *         description: Error en la petición
  *     security:
@@ -51,8 +39,8 @@ const {getAllInformation,
  * @swagger
  * /Api/v1/informations/{id}:
  *   get:
- *     summary: Resumen opcional para la operación
- *     description: Descripción opcional para la operación
+ *     summary: Muestra un restaurante de acuerdo al Id
+ *     description: Este endpoint lo podra utilizar cualquier usuario
  *     tags:
  *       - Restaurant
  *     parameters:
@@ -79,8 +67,8 @@ router.get("/:id",checkAuth,getOneInformationById)
  * @swagger
  * /Api/v1/informations/{nombre}:
  *   get:
- *     summary: Resumen opcional para la operación
- *     description: Descripción opcional para la operación
+ *     summary: Muestra un restaurante de acuerdo al nombre
+ *     description: Este endpoint lo podra utilizar cualquier usuario
  *     tags:
  *       - Restaurant
  *     parameters:
@@ -102,12 +90,13 @@ router.get("/:id",checkAuth,getOneInformationById)
 router.get("/name/:nombre",checkAuth,getOneInformationByName)
 // // todo: localhost/Api/v1/informations/
 
+//TODO: Donde recibimos data
 /**
  * @swagger
  * /Api/v1/informations:
  *   post:
- *     summary: Resumen opcional para la operación
- *     description: Descripción opcional para la operación
+ *     summary: Crear un usuari en la B.D.
+ *     description: Creacion de un nuevo usuario
  *     tags:
  *       - Restaurant
  *     requestBody:
@@ -115,7 +104,7 @@ router.get("/name/:nombre",checkAuth,getOneInformationByName)
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/NombreDelEsquema'
+ *             $ref: '#/components/schemas/restaurant'
  *     responses:
  *       '200':
  *         description: Respuesta exitosa
@@ -131,14 +120,14 @@ router.get("/name/:nombre",checkAuth,getOneInformationByName)
 
 /**
  * @swagger
- * /Api/v1/informations/{id}:
+ * /Api/v1/informations/{_id}:
  *   put:
- *     summary: Resumen opcional para la operación
- *     description: Descripción opcional para la operación
+ *     summary: Modificar aspectos del usuario
+ *     description: Actualización de alguno de los datos en la BD, esto solo lo prodra hacer el admin
  *     tags:
  *       - Restaurant
  *     parameters:
- *       - name: id
+ *       - name: _id
  *         in: path
  *         required: true
  *         description: ID del objeto a actualizar
@@ -149,7 +138,7 @@ router.get("/name/:nombre",checkAuth,getOneInformationByName)
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/NombreDelEsquema'
+ *             $ref: '#/components/schemas/restaurant'
  *     responses:
  *       '200':
  *         description: Respuesta exitosa
@@ -164,12 +153,12 @@ router.put("/:id",checkAuth, checkRoleAuth(['admin']), updateInformation)
 
 /**
  * @swagger
- * /Api/v1/users:
+ * /Api/v1/informations:
  *   delete:
  *     summary: Eliminar un usuario de la BD
- *     description: Con el Id se eliminara un usuario de la BD
+ *     description: Con el Id se eliminara un usuario de la BD, esto solo lo podra hacer el admin
  *     tags:
- *       - Users
+ *       - Restaurant
  *     requestBody:
  *       required: true
  *       content:
@@ -184,7 +173,6 @@ router.put("/:id",checkAuth, checkRoleAuth(['admin']), updateInformation)
  *     security:
  *       - bearerAuth: []
  */
-
 router.delete("/",checkAuth, checkRoleAuth(['admin']),deleteInformation)
 
 
