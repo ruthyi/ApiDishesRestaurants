@@ -1,8 +1,8 @@
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 // Metadata
-const option1={
-  definition:{
+const option1 = {
+  definition: {
 
   }
 }
@@ -23,18 +23,18 @@ const option = {
       schemas: {
         delete: {
           type: "object",
-          properties:{
-            id: { type: "String"},
+          properties: {
+            id: { type: "string" },
           }
         },
         login: {
           type: "object",
           properties: {
             name: {
-              type: "String"
+              type: "string"
             },
             password: {
-              type: "String"
+              type: "string"
             }
           }
         },
@@ -42,100 +42,137 @@ const option = {
           type: "object",
           properties: {
             name: {
-              type: "String"
+              type: "string"
             },
             password: {
-              type: "String"
+              type: "string"
             },
             role: {
-              type: "String"
+              type: "string"
             }
           }
         },
         restaurant: {
           type: "object",
           properties: {
-            nombre: {type:"string"},
-            menu: [
-              {
-                postres:  {type: "array"}[
+            nombre: { type: "string" },
+            menu: {
+              type: "object",
+              properties: {
+                postres: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      nombre: { type: "string" },
+                      url: { type: "string" },
+                      precio: { type: "number" },
+                      descripción: { type: "string" },
+                      CalificaciónTotal: { type: "integer" },
+                      comentarios: {
+                        type: "array",
+                        items: {
+                          type: "object",
+                          properties: {
+                            calificación: { type: "integer" },
+                            comentario: { type: "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                bebidas: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      nombre: { type: "string" },
+                      url: { type: "string" },
+                      precio: { type: "string" },
+                      descripción: { type: "string" },
+                      CalificaciónTotal: { type: "integer" },
+                      comentarios: {
+                        type: "array",
+                        items: {
+                          type: "object",
+                          properties: {
+                            calificación: { type: "integer" },
+                            comentario: { type: "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                almuerzo_cena: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      nombre: { type: "string" },
+                      url: { type: "string" },
+                      precio: { type: "integer" },
+                      descripción: { type: "string" },
+                      tipo: { type: "string" },
+                      CalificaciónTotal: { type: "integer" },
+                      comentarios: {
+                        type: "array",
+                        items: {
+                          type: "object",
+                          properties: {
+                            calificación: { type: "integer" },
+                            comentario: { type: "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                desayuno: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      nombre: { type: "string" },
+                      url: { type: "string" },
+                      precio: { type: "integer" },
+                      descripción: { type: "string" },
+                      CalificaciónTotal: { type: "integer" },
+                      comentarios: {
+                        type: "array",
+                        items: {
+                          type: "object",
+                          properties: {
+                            calificación: { type: "integer" },
+                            comentario: { type: "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
 
-                  {
-                    nombre: {type:"string"},
-                    url: {type:"string"},
-                    precio: Number,
-                    descripción: {type:"string"},
-                    CalificaciónTotal: Number,
-                    comentarios: [
-                      {
-                        calificación: Number,
-                        comentario: {type:"string"}
-                      }
-                    ]
-                  }
-                ],
-                bebidas: [
-                  {
-                    nombre: {type:"string"},
-                    url: {type:"string"},
-                    precio: Number,
-                    descripción: {type:"string"},
-                    CalificaciónTotal: Number,
-                    comentarios: [
-                      {
-                        calificación: Number,
-                        comentario: {type:"string"}
-                      }
-                    ]
-                  }
-                ],
-                almuerzo_cena: [
-                  {
-                    nombre: {type:"string"},
-                    url: {type:"string"},
-                    precio: Number,
-                    descripción: {type:"string"},
-                    tipo: {type:"string"},
-                    CalificaciónTotal: Number,
-                    comentarios: [
-                      {
-                        calificación: Number,
-                        comentario: {type:"string"}
-                      }
-                    ]
-                  }
-                ],
-                desayuno: [
-                  {
-                    nombre: {type:"string"},
-                    url: {type:"string"},
-                    precio: Number,
-                    descripción: {type:"string"},
-                    CalificaciónTotal: Number,
-                    comentarios: [
-                      {
-                        calificación: Number,
-                        comentario: {type:"string"}
-                      }
-                    ]
-                  }
-                ]
+              },
+            },
+            sucursales: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  dirección: { type: "string" },
+                  localidad: { type: "string" },
+                  horario: { type: "string" },
+                  telefono: { type: "integer" },
+                  url: { type: "string" },
+                  nombre: { type: "string" }
+                }
               }
-            ],
-            sucursales: [
-              {
-                dirección: String,
-                localidad: String,
-                horario: String,
-                telefono: Number,
-                url: String,
-                nombre: String
-              }
-            ]
-          }
-        }
-      }
-    }
+            }
+          },
+        },
+      },
+    },
   },
   apis: ["./src/routes/*.js"]
 };
