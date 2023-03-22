@@ -2,6 +2,7 @@
 Api Rest que permite crear, eliminar, actualizar y leer todas los restaurantes de bogota y los platos que tienen, de igualmente cuenta dos filtros personalizados
 donde se puede traer los datos del restaurante de acuerdo al id generado automanticamente por Mongo o el nombre bque posee.
 (https://apidishesrestaurants.onrender.com/Api/v1/informations/)
+(https://apidishesrestaurants.onrender.com/Api/v1/swagger/docs/)
  
 ## START 🚀 
 
@@ -24,11 +25,12 @@ donde se puede traer los datos del restaurante de acuerdo al id generado automan
 * Mongo db
 * Express
 * Cors
+* JWT
 * eslint
 * bcryptjs
 * dotenv
-* jsonwebtoken
 * mongoose
+* Swagger
 * Implementa el Modelo Vista controlador (MVC)
 
 ### Funcionalidades 📦 
