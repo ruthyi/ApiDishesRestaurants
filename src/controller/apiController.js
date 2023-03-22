@@ -58,7 +58,7 @@ const updateInformation = async(req,res) =>{
 // delte a registration of the data base
 const deleteInformation = async(req,res) =>{
   try {
-    const resDetail = await useModel.findOneAndRemove({ _id: req.body.id });
+    const resDetail = await useModel.findOneAndRemove({ _id: req.body.idProduct});
     res.status(200);
     res.send("Eliminado Exitosamente");
 } catch (e) {
